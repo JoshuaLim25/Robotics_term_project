@@ -1,0 +1,133 @@
+import rclpy
+from rclpy.action import ActionClient
+from rclpy.node import Node
+
+from action_interface.action import Robot
+from control_msgs.action import FollowJointTrajectory
+from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
+from std_msgs.msg import Header
+from builtin_interfaces.msg import Duration
+# TODO maybe time
+
+
+arm_joints = ['shoulder_to_shoulder_joint', 'upper_arm_to_elbow']
+
+class WheelActionClient(Node):
+
+    def __init__(self):
+        super().__init__('robot_action_client')
+        self._action_client = ActionClient(self, Robot, 'robot')
+
+    def send_goal(self, drive_time):
+        goal_msg = Robot.Goal()
+        goal_msg.drive_time = drive_time
+        goal_msg.v_x = .2  # TODO, take user input
+        goal_msg.w_z = .2
+
+        self._action_client.wait_for_server()
+
+        self._send_goal_future = self._action_client.send_goal_async(goal_msg, feedback_callback=self.feedback_callback)
+
+        self._send_goal_future.add_done_callback(self.goal_response_callback)
+
+    def goal_response_callback(self, future):
+        goal_handle = future.result()
+        if not goal_handle.accepted:
+            self.get_logger().info('Goal rejected for wheels')
+            return
+
+        self.get_logger().info('Goal accepted for wheels')
+
+        self._get_result_future = goal_handle.get_result_async()
+        self._get_result_future.add_done_callback(self.get_result_callback)
+
+    def get_result_callback(self, future):
+        result = future.result().result
+        # self.get_logger().info('Result: {0}'.format(result.complete))
+        rclpy.shutdown()
+
+    def feedback_callback(self, feedback_msg):
+        feedback = feedback_msg.feedback
+        # self.get_logger().info('Received feedback: {0}'.format(feedback.percent_complete))
+
+
+class ArmActionClient(Node):
+    def __init__(self):
+        super().__init__('robot_arm_action_client')
+        self._action_client = ActionClient(self, FollowJointTrajectory, '/joint_trajectory_controller/follow_joint_trajectory')
+        self.joint_names = ['shoulder_to_shoulder_joint', 'upper_arm_to_elbow']
+        self.frame_id = 'base_link'
+
+    def send_goal(self, pos1, pos2):
+        goal_msg = FollowJointTrajectory.Goal()
+
+        # Build the trajectory message
+        traj = JointTrajectory()
+        traj.header = Header()
+        traj.header.stamp = self.get_clock().now().to_msg()
+        traj.header.frame_id = self.frame_id
+        traj.joint_names = self.joint_names
+
+
+        # Create a trajectory point (one point goal)
+        point = JointTrajectoryPoint()
+
+        point.positions = [pos1, pos2] # went back towards us
+        
+        # point.positions = [0.5, 1.0] # went back towards us
+        # point.positions = [-0.5, -0.25] # went forward
+        point.velocities = [0.0, 0.0] # zero to start
+        point.time_from_start = Duration(sec=2, nanosec=0)
+        traj.points.append(point)
+        goal_msg.trajectory = traj # convenience
+
+        self.get_logger().info("Waiting for arm action server...")
+        self._action_client.wait_for_server()
+        self.get_logger().info("Sending goal request...")
+        self._send_goal_future = self._action_client.send_goal_async(goal_msg, feedback_callback=self.feedback_callback)
+        self._send_goal_future.add_done_callback(self.goal_response_callback)
+
+    
+    def goal_response_callback(self, future):
+        goal_handle = future.result()
+        if not goal_handle.accepted:
+            self.get_logger().info('Goal rejected for arm')
+            return
+
+        self.get_logger().info('Goal accepted for arm')
+
+        self._get_result_future = goal_handle.get_result_async()
+        self._get_result_future.add_done_callback(self.get_result_callback)
+
+    def get_result_callback(self, future):
+        result = future.result().result
+        #self.get_logger().info('Result: {0}'.format(result.complete))
+        self.get_logger().info(f'Result: {result.complete}')
+        rclpy.shutdown()
+
+    def feedback_callback(self, feedback_msg):
+        feedback = feedback_msg.feedback
+        # self.get_logger().info('Received feedback: {0}'.format(feedback.percent_complete))
+        self.get_logger().info(f'Received feedback: {feedback.precent_complete}% complete')
+
+def main(args=None):
+    rclpy.init(args=args)
+    # NOTE can just start the run with the arm sticking straight out
+    # so just move robot -> move arm
+
+    # WHEEL
+    wheel_action_client = WheelActionClient()
+    drive_duration = float(input("Enter the drive duration: ")) # 14pt: 6 in
+    wheel_action_client.send_goal(drive_duration)
+    rclpy.spin(wheel_action_client)
+
+    # ARM
+    arm_action_client = ArmActionClient()
+    pos1 = float(input("Enter the first position field: "))
+    pos2 = float(input("Enter the second position field: "))
+    arm_action_client.send_goal(pos1, pos2)
+    rclpy.spin(arm_action_client)
+
+
+if __name__ == '__main__':
+    main()

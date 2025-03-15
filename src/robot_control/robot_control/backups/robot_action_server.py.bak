@@ -7,7 +7,6 @@ from action_interface.action import Robot
 from geometry_msgs.msg import Twist
 
 
-
 class RobotActionServer(Node):
 
     def __init__(self):
@@ -18,19 +17,11 @@ class RobotActionServer(Node):
             'robot', # action name
             self.execute_callback)
 
-        self.pub_wheel = self.create_publisher(
+        self.publisher_wheels = self.create_publisher(
             Twist,
             'diff_drive_controller/cmd_vel_unstamped',
             10
         )
-
-        # self.pub_arm = self.create_publisher(
-        #     Twist,
-        #     # 'joint_trajectory_controller/',
-        #     'arm_controller/command',
-        #     10
-        # )
-
 
     def execute_callback(self, goal_handle):
         self.get_logger().info('Executing goal...')
@@ -38,10 +29,6 @@ class RobotActionServer(Node):
 
         feedback_msg.percent_complete = 0.0
         t = int(10*goal_handle.request.drive_time)
-        # t = int(5*goal_handle.request.drive_time)
-        # t = int(2*goal_handle.request.drive_time)
-        # t = int(0.2*goal_handle.request.drive_time)
-        # t = int(0.05*goal_handle.request.drive_time)
 
         twist = Twist()
         twist.linear.x = goal_handle.request.v_x
@@ -49,16 +36,13 @@ class RobotActionServer(Node):
 
         # NOTE: modified from https://docs.ros.org/en/iron/Tutorials/Intermediate/Writing-an-Action-Server-Client/Py.html#publishing-feedback 
         for i in range(t):
-            self.pub_wheel.publish(twist)
+            self.publisher_wheels.publish(twist)
             feedback_msg.percent_complete = i/t
             goal_handle.publish_feedback(feedback_msg)
             time.sleep(0.1) # 10 Hz
 
-        self.get_logger().info('before result')
-
         result = Robot.Result()
         result.complete = True 
-        self.get_logger().info('after result')
         goal_handle.succeed()
         return result
 

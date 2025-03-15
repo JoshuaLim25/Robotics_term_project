@@ -1,3 +1,6 @@
 log/*
 build/*
 install/*
+src/robot_control/robot_control/install/*
+src/robot_control/robot_control/log/*
+

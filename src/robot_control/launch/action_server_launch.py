@@ -24,6 +24,15 @@ def generate_launch_description():
 			output={'stdout': 'screen', 'stderr': 'screen'}
 		),
 
+    # # ADDED:
+		# Node(
+		# 	package = 'robot_control',
+		# 	executable = 'robot_action_client',
+		# 	name = 'robot_action_client',
+		# 	output={'stdout': 'screen', 'stderr': 'screen'}
+		# ),
+
+
 		Node(
 			package='robot_state_publisher',
 			executable='robot_state_publisher',

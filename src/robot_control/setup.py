@@ -27,6 +27,7 @@ setup(
         'console_scripts': [
             # 'simulator = robot_control.simulator:main',
             'robot_action_server = robot_control.robot_action_server:main',
+            # 'robot_action_client = robot_control.robot_action_client:main',
         ],
     },
 )
