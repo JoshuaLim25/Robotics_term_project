@@ -69,6 +69,7 @@
       <geometry>
         <box size= "0.075 0.02 0.002"/>
       </geometry>
+      <!-- <origin rpy="0 1.57075 1.57075" xyz="0 0 0"/> -->
       <origin rpy="0 1.57075 1.57075" xyz="0 0 0"/>
       <material name ="blue"/>
     </visual>
@@ -80,7 +81,7 @@
       <geometry>
         <cylinder length="0.01" radius="0.07"/>
       </geometry>
-      <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+      <origin rpy="0 1.57075 1.57075" xyz="0 0 0"/>
       <material name ="blue"/>
     </visual>
   </link>
@@ -91,7 +92,7 @@
       <geometry>
         <cylinder length="0.01" radius="0.07"/>
       </geometry>
-      <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+      <origin rpy="0 1.57075 1.57075" xyz="0 0 0"/>
     </visual>
   </link>
 
@@ -104,7 +105,7 @@
       <!--
       <origin rpy="0 1.57075 0" xyz="-0.12 0.05 0.0"/>
       -->
-      <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+      <origin rpy="0 1.57075 1.57075" xyz="0 0 0"/>
       <material name ="blue"/>
     </visual>
   </link>
@@ -114,10 +115,23 @@
       <geometry>
         <cylinder length="0.01" radius="0.07"/>
       </geometry>
-      <origin rpy="0 1.57075 0" xyz="0 0 0"/>
+      <origin rpy="0 1.57075 1.57075" xyz="0 0 0"/>
       <material name ="black"/>
     </visual>
   </link>
+
+  <!-- CAM -->
+   <link name="camera">
+     <visual>
+       <geometry>
+         <cylinder length="0.01" radius="0.07"/>
+       </geometry>
+       <origin rpy="0 1.57075 0" xyz="0 0 0.06"/>
+       <material name ="black"/>
+     </visual>
+   </link>
+
+
 
 
   <!-- JOINTS -->
@@ -126,18 +140,21 @@
   <joint name="base_to_front_right_leg" type="continuous">
     <parent link="base_link"/>
     <child link="right_front_wheel"/>
-    <origin rpy="0 0 1.57075" xyz="0.16 -0.26 0.0"/>
-    <!-- <axis xyz="0 0 1"/> -->
-    <axis xyz="1 0 0"/>
+    <!-- <origin rpy="0 0 1.57075" xyz="0.16 0.26 0.0"/> -->
+    <!-- <origin rpy="0 0 0" xyz="-0.16 -0.26 0.0"/> -->
+    <origin rpy="0 0 3.14159" xyz="-0.16 -0.26 0.0"/>
+    <!-- <axis xyz="1 0 0"/> -->
+    <axis xyz="0 1 0"/>
     <material name ="black"/>
   </joint>
 
   <joint name="base_to_front_left_leg" type="continuous">
     <parent link="base_link"/>
     <child link="left_front_wheel"/>
-    <origin rpy="0 0 1.57075" xyz="0.16 0.26 0.0"/>
-    <!-- <axis xyz="0 0 1"/> -->
-    <axis xyz="1 0 0"/>
+    <!-- <origin rpy="0 0 1.57075" xyz="0.16 0.26 0.0"/> -->
+    <origin rpy="0 0 0" xyz="-0.16 0.26 0.0"/>
+    <!-- <axis xyz="1 0 0"/> -->
+    <axis xyz="0 1 0"/>
     <material name ="white"/>
   </joint>
 
@@ -145,8 +162,8 @@
   <joint name="base_to_back_right_leg" type="fixed">
     <parent link="base_link"/>
     <child link="right_back_wheel"/>
-    <origin rpy="0 0 1.57075" xyz="-0.16 -0.26 0.0"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.16 -0.26 0.0"/>
+    <axis xyz="0 1 0"/>
     <material name ="black"/>
   </joint>
 
@@ -154,8 +171,8 @@
   <joint name="base_to_back_left_leg" type="fixed">
     <parent link="base_link"/>
     <child link="left_back_wheel"/>
-    <origin rpy="0 0 1.57075" xyz="-0.16 0.26 0.0"/>
-    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="0.16 0.26 0.0"/>
+    <axis xyz="0 1 0"/>
     <material name ="white"/>
   </joint>
 

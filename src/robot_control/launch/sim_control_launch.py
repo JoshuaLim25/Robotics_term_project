@@ -9,12 +9,12 @@ def generate_launch_description():
 	control_params = os.path.join(get_package_share_directory('robot_control'), 'params', 'control_params.yaml')
 
 	return LaunchDescription([
-		# Node(
-		# 	package = 'robot_control',
-		# 	executable = 'simulator',
-		# 	name = 'simulator',
-		# 	output={'stdout': 'screen', 'stderr': 'screen'}
-		# ),
+		Node(
+			package = 'robot_control',
+			executable = 'simulator',
+			name = 'simulator',
+			output={'stdout': 'screen', 'stderr': 'screen'}
+		),
 		Node(
 			package='robot_state_publisher',
 			executable='robot_state_publisher',
