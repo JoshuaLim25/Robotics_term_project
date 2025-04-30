@@ -1,0 +1,11 @@
+image: cse400_map.png
+# resolution: size in meters for each pixel of the image
+resolution: 0.01
+# origin: [x, y, yaw]
+# position of lower left corner and orientation
+origin: [-5.0, -2.5, 0.0]  # original, by the table
+# origin: [0.0, 0.0, 0.0]  # hugging wall of first room
+# origin: [-8.0, -6.0, 0.0]
+occupied_thresh: 0.65
+free_thresh: 0.196
+negate: 0

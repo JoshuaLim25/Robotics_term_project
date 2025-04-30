@@ -1,0 +1,13 @@
+# Goal
+int32 min_tag
+int32 max_tag
+---
+# Result
+int32 tag
+float32 x
+float32 y
+float32 orientation
+---
+# Feedback
+# float32 percent_complete
+

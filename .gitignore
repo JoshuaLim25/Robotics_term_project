@@ -1,6 +1,14 @@
 log/*
 build/*
 install/*
+src/robot_control/robot_control/build/*
 src/robot_control/robot_control/install/*
 src/robot_control/robot_control/log/*
 
+src/navigation/robot_control/build/*
+src/navigation/robot_control/install/*
+src/navigation/robot_control/log/*
+
+src/robot_camera/robot_control/build/*
+src/robot_camera/robot_control/install/*
+src/robot_camera/robot_control/log/*

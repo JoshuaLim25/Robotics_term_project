@@ -1,0 +1,104 @@
+[0.000000] (-) TimerEvent: {}
+[0.001740] (navigation) JobQueued: {'identifier': 'navigation', 'dependencies': OrderedDict()}
+[0.001960] (navigation) JobStarted: {'identifier': 'navigation'}
+[0.095706] (-) TimerEvent: {}
+[0.196735] (-) TimerEvent: {}
+[0.297913] (-) TimerEvent: {}
+[0.399348] (-) TimerEvent: {}
+[0.500794] (-) TimerEvent: {}
+[0.602571] (-) TimerEvent: {}
+[0.704292] (-) TimerEvent: {}
+[0.805925] (-) TimerEvent: {}
+[0.907819] (-) TimerEvent: {}
+[1.009535] (-) TimerEvent: {}
+[1.111318] (-) TimerEvent: {}
+[1.212981] (-) TimerEvent: {}
+[1.314808] (-) TimerEvent: {}
+[1.416560] (-) TimerEvent: {}
+[1.518159] (-) TimerEvent: {}
+[1.619703] (-) TimerEvent: {}
+[1.720538] (-) TimerEvent: {}
+[1.821463] (-) TimerEvent: {}
+[1.922308] (-) TimerEvent: {}
+[2.023212] (-) TimerEvent: {}
+[2.124089] (-) TimerEvent: {}
+[2.225335] (-) TimerEvent: {}
+[2.326552] (-) TimerEvent: {}
+[2.427899] (-) TimerEvent: {}
+[2.529047] (-) TimerEvent: {}
+[2.630334] (-) TimerEvent: {}
+[2.731507] (-) TimerEvent: {}
+[2.832234] (-) TimerEvent: {}
+[2.933075] (-) TimerEvent: {}
+[3.033864] (-) TimerEvent: {}
+[3.134669] (-) TimerEvent: {}
+[3.235466] (-) TimerEvent: {}
+[3.336305] (-) TimerEvent: {}
+[3.437165] (-) TimerEvent: {}
+[3.538034] (-) TimerEvent: {}
+[3.610646] (navigation) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/navigation', 'build', '--build-base', '/home/rock6/ros2_lab4/src/navigation/build/navigation/build', 'install', '--record', '/home/rock6/ros2_lab4/src/navigation/build/navigation/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/rock6/ros2_lab4/src/navigation', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'rock6', 'SSH_CLIENT': '10.144.113.24 47592 22', 'LC_TIME': 'en_US.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rock6/ros2_lab4/install/action_interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib:/usr/lib:', 'MOTD_SHOWN': 'pam', 'HOME': '/home/rock6', 'OLDPWD': '/home/rock6/ros2_lab4/src/navigation/launch', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'en_US.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/rock6/ros2_lab4/install', 'ROS_DISTRO': 'iron', 'LOGNAME': 'rock6', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '8', 'PATH': '/opt/ros/iron/bin:/home/rock6/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'en_US.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '6', 'AMENT_PREFIX_PATH': '/home/rock6/ros2_lab4/install/robot_control:/home/rock6/ros2_lab4/install/robot_camera:/home/rock6/ros2_lab4/install/navigation:/home/rock6/ros2_lab4/install/action_interface:/opt/ros/iron', 'SHELL': '/bin/bash', 'LC_NAME': 'en_US.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'en_US.UTF-8', 'GCC_COLORS': 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01', 'LC_IDENTIFICATION': 'en_US.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/rock6/ros2_lab4/src/navigation/build/navigation', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '10.144.113.24 47592 10.144.113.18 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rock6/ros2_lab4/src/navigation/build/navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages:/home/rock6/ros2_lab4/install/robot_control/lib/python3.10/site-packages:/home/rock6/ros2_lab4/install/robot_camera/lib/python3.10/site-packages:/home/rock6/ros2_lab4/install/navigation/lib/python3.10/site-packages:/home/rock6/ros2_lab4/install/action_interface/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages', 'LC_NUMERIC': 'en_US.UTF-8', 'LC_PAPER': 'en_US.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/rock6/ros2_lab4/install/action_interface'}, 'shell': False}
+[3.638370] (-) TimerEvent: {}
+[3.739236] (-) TimerEvent: {}
+[3.840043] (-) TimerEvent: {}
+[3.940802] (-) TimerEvent: {}
+[4.041607] (-) TimerEvent: {}
+[4.142439] (-) TimerEvent: {}
+[4.243281] (-) TimerEvent: {}
+[4.344088] (-) TimerEvent: {}
+[4.444933] (-) TimerEvent: {}
+[4.545680] (-) TimerEvent: {}
+[4.646444] (-) TimerEvent: {}
+[4.747261] (-) TimerEvent: {}
+[4.848064] (-) TimerEvent: {}
+[4.948850] (-) TimerEvent: {}
+[5.012049] (navigation) StdoutLine: {'line': b'running egg_info\n'}
+[5.014672] (navigation) StdoutLine: {'line': b'creating build/navigation/navigation.egg-info\n'}
+[5.015885] (navigation) StdoutLine: {'line': b'writing build/navigation/navigation.egg-info/PKG-INFO\n'}
+[5.017880] (navigation) StdoutLine: {'line': b'writing dependency_links to build/navigation/navigation.egg-info/dependency_links.txt\n'}
+[5.018533] (navigation) StdoutLine: {'line': b'writing entry points to build/navigation/navigation.egg-info/entry_points.txt\n'}
+[5.019976] (navigation) StdoutLine: {'line': b'writing requirements to build/navigation/navigation.egg-info/requires.txt\n'}
+[5.020624] (navigation) StdoutLine: {'line': b'writing top-level names to build/navigation/navigation.egg-info/top_level.txt\n'}
+[5.021169] (navigation) StdoutLine: {'line': b"writing manifest file 'build/navigation/navigation.egg-info/SOURCES.txt'\n"}
+[5.029687] (navigation) StdoutLine: {'line': b"reading manifest file 'build/navigation/navigation.egg-info/SOURCES.txt'\n"}
+[5.030770] (navigation) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[5.034110] (navigation) StdoutLine: {'line': b"writing manifest file 'build/navigation/navigation.egg-info/SOURCES.txt'\n"}
+[5.036629] (navigation) StdoutLine: {'line': b'running build\n'}
+[5.038518] (navigation) StdoutLine: {'line': b'running build_py\n'}
+[5.039262] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/build/navigation/build\n'}
+[5.040538] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib\n'}
+[5.042046] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib/navigation\n'}
+[5.049860] (-) TimerEvent: {}
+[5.058067] (navigation) StdoutLine: {'line': b'copying navigation/__init__.py -> /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib/navigation\n'}
+[5.059048] (navigation) StdoutLine: {'line': b'running install\n'}
+[5.061112] (navigation) StdoutLine: {'line': b'running install_lib\n'}
+[5.064134] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation\n'}
+[5.065052] (navigation) StdoutLine: {'line': b'copying /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib/navigation/__init__.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation\n'}
+[5.067603] (navigation) StdoutLine: {'line': b'byte-compiling /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation/__init__.py to __init__.cpython-310.pyc\n'}
+[5.068969] (navigation) StdoutLine: {'line': b'running install_data\n'}
+[5.070124] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index\n'}
+[5.070934] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index/resource_index\n'}
+[5.071849] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index/resource_index/packages\n'}
+[5.072747] (navigation) StdoutLine: {'line': b'copying resource/navigation -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index/resource_index/packages\n'}
+[5.073639] (navigation) StdoutLine: {'line': b'copying package.xml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation\n'}
+[5.074611] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch\n'}
+[5.075748] (navigation) StdoutLine: {'line': b'copying launch/navigation_launch.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch\n'}
+[5.076643] (navigation) StdoutLine: {'line': b'copying launch/nav_all_launch.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch\n'}
+[5.077519] (navigation) StdoutLine: {'line': b'copying launch/localization_launch.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch\n'}
+[5.080349] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map\n'}
+[5.081400] (navigation) StdoutLine: {'line': b'copying map/map_config.yaml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map\n'}
+[5.082035] (navigation) StdoutLine: {'line': b'copying map/cse400_map.png.bak -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map\n'}
+[5.082594] (navigation) StdoutLine: {'line': b'copying map/cse400_map.png -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map\n'}
+[5.083117] (navigation) StdoutLine: {'line': b'creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params\n'}
+[5.083745] (navigation) StdoutLine: {'line': b'copying params/ekf_params.yaml.bak -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params\n'}
+[5.084338] (navigation) StdoutLine: {'line': b'copying params/ekf_params.yaml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params\n'}
+[5.084818] (navigation) StdoutLine: {'line': b'copying params/nav2_params.yaml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params\n'}
+[5.085314] (navigation) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.091616] (navigation) StdoutLine: {'line': b'Copying build/navigation/navigation.egg-info to /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation-0.0.0-py3.10.egg-info\n'}
+[5.096545] (navigation) StdoutLine: {'line': b'running install_scripts\n'}
+[5.150394] (-) TimerEvent: {}
+[5.193949] (navigation) StdoutLine: {'line': b"writing list of installed files to '/home/rock6/ros2_lab4/src/navigation/build/navigation/install.log'\n"}
+[5.250688] (-) TimerEvent: {}
+[5.323293] (navigation) CommandEnded: {'returncode': 0}
+[5.350971] (-) TimerEvent: {}
+[5.378613] (navigation) JobEnded: {'identifier': 'navigation', 'rc': 0}
+[5.383970] (-) EventReactorShutdown: {}

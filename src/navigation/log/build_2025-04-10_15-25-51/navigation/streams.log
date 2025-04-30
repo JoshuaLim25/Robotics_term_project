@@ -1,0 +1,46 @@
+[3.627s] Invoking command in '/home/rock6/ros2_lab4/src/navigation': PYTHONPATH=/home/rock6/ros2_lab4/src/navigation/build/navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/navigation build --build-base /home/rock6/ros2_lab4/src/navigation/build/navigation/build install --record /home/rock6/ros2_lab4/src/navigation/build/navigation/install.log --single-version-externally-managed install_data
+[5.011s] running egg_info
+[5.013s] creating build/navigation/navigation.egg-info
+[5.014s] writing build/navigation/navigation.egg-info/PKG-INFO
+[5.016s] writing dependency_links to build/navigation/navigation.egg-info/dependency_links.txt
+[5.018s] writing entry points to build/navigation/navigation.egg-info/entry_points.txt
+[5.018s] writing requirements to build/navigation/navigation.egg-info/requires.txt
+[5.019s] writing top-level names to build/navigation/navigation.egg-info/top_level.txt
+[5.021s] writing manifest file 'build/navigation/navigation.egg-info/SOURCES.txt'
+[5.028s] reading manifest file 'build/navigation/navigation.egg-info/SOURCES.txt'
+[5.029s] adding license file 'LICENSE'
+[5.033s] writing manifest file 'build/navigation/navigation.egg-info/SOURCES.txt'
+[5.036s] running build
+[5.037s] running build_py
+[5.038s] creating /home/rock6/ros2_lab4/src/navigation/build/navigation/build
+[5.040s] creating /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib
+[5.041s] creating /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib/navigation
+[5.057s] copying navigation/__init__.py -> /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib/navigation
+[5.058s] running install
+[5.060s] running install_lib
+[5.063s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation
+[5.063s] copying /home/rock6/ros2_lab4/src/navigation/build/navigation/build/lib/navigation/__init__.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation
+[5.066s] byte-compiling /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation/__init__.py to __init__.cpython-310.pyc
+[5.068s] running install_data
+[5.069s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index
+[5.070s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index/resource_index
+[5.071s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index/resource_index/packages
+[5.071s] copying resource/navigation -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/ament_index/resource_index/packages
+[5.072s] copying package.xml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation
+[5.073s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch
+[5.074s] copying launch/navigation_launch.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch
+[5.075s] copying launch/nav_all_launch.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch
+[5.078s] copying launch/localization_launch.py -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/launch
+[5.079s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map
+[5.080s] copying map/map_config.yaml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map
+[5.080s] copying map/cse400_map.png.bak -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map
+[5.081s] copying map/cse400_map.png -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/map
+[5.082s] creating /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params
+[5.082s] copying params/ekf_params.yaml.bak -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params
+[5.083s] copying params/ekf_params.yaml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params
+[5.083s] copying params/nav2_params.yaml -> /home/rock6/ros2_lab4/src/navigation/install/navigation/share/navigation/params
+[5.084s] running install_egg_info
+[5.090s] Copying build/navigation/navigation.egg-info to /home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages/navigation-0.0.0-py3.10.egg-info
+[5.095s] running install_scripts
+[5.192s] writing list of installed files to '/home/rock6/ros2_lab4/src/navigation/build/navigation/install.log'
+[5.323s] Invoked command in '/home/rock6/ros2_lab4/src/navigation' returned '0': PYTHONPATH=/home/rock6/ros2_lab4/src/navigation/build/navigation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rock6/ros2_lab4/src/navigation/install/navigation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/navigation build --build-base /home/rock6/ros2_lab4/src/navigation/build/navigation/build install --record /home/rock6/ros2_lab4/src/navigation/build/navigation/install.log --single-version-externally-managed install_data

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "action_interface__py",
+		"source" : "/home/rock6/ros2_lab4/src/build/action_interface/action_interface__py"
+	}
+}

@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "action_interface/action/Robot_Result",
+      "fields": [
+        {
+          "name": "complete",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "action_interface/action/Robot_Result",
+      "hash_string": "RIHS01_539f3f1581d0cbbdbd2aef6a9002cb46415e0abd0e13c1c1d2cea5d8c38ff8ab"
+    }
+  ]
+}

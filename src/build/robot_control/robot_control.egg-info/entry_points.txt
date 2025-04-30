@@ -1,0 +1,3 @@
+[console_scripts]
+robot_action_server = robot_control.robot_action_server:main
+
