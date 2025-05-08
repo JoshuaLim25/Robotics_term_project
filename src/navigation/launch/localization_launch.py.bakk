@@ -1,0 +1,85 @@
+# localization_launch.py
+# navigation/launch/localization_launch.py
+
+import os
+from ament_index_python.packages import get_package_share_directory
+
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+    # static config
+    use_sim_time = False
+    autostart = True
+
+    # map_server: load your map from navigation/maps
+    map_file = os.path.join(
+        get_package_share_directory('navigation'),
+        'map',               # corrected from 'map'
+        'map_config.yaml'     # adjust if your map filename differs
+    )
+
+    # AMCL parameters (separate AMCL‐only file)
+    # amcl_params = os.path.join(
+    #     get_package_share_directory('navigation'),
+    #     'params',
+    #     'amcl_params.yaml'    # ensure this file exists with the amcl block
+    # )
+
+    # EKF parameters
+    ekf_params = os.path.join(
+        get_package_share_directory('navigation'),
+        'params',
+        'ekf_params.yaml'
+    )
+
+    # Lifecycle nodes for map_server and amcl
+    lifecycle_nodes = ['map_server', 'amcl']
+
+    return LaunchDescription([
+        # Map server (map → static)
+        Node(
+            package='nav2_map_server',
+            executable='map_server',
+            name='map_server',
+            output='screen',
+            emulate_tty=True,
+            parameters=[
+                {'yaml_filename': map_file},
+                {'use_sim_time': use_sim_time}
+            ],
+        ),
+
+        # Lifecycle manager for map_server & amcl
+        Node(
+            package='nav2_lifecycle_manager',
+            executable='lifecycle_manager',
+            name='lifecycle_manager',
+            output='screen',
+            emulate_tty=True,
+            parameters=[
+                {'use_sim_time': use_sim_time},
+                {'autostart': autostart},
+                {'node_names': lifecycle_nodes}
+            ],
+        ),
+
+        # AMCL (map → odom)
+        # Node(
+        #     package='nav2_amcl',
+        #     executable='amcl',
+        #     name='amcl',
+        #     output='screen',
+        #     parameters=[amcl_params],
+        # ),
+
+        # EKF (odom → base_link)
+        Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_filter_node',
+            output='screen',
+            parameters=[ekf_params],
+        ),
+    ])
+

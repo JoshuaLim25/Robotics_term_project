@@ -13,6 +13,9 @@ ros2 action list
 - created new node (`robot_action_server`) in `src/robot_control/robot_control`, where packages go
   - This 
 - added entrypoint in `setup.py`
+- check in server file
+- change min/max tag in client file: `navigator.waitUntilNav2Active()`
+
 
 ## Problems
 `ros2 action send_goal --feedback robot_control action_interface/action/Robot
@@ -44,4 +47,11 @@ ros2 interface show control_msgs/action/FollowJointTrajectory
 ## ARM 
 - You're trying to publish to `trajectory_msgs/msg/JointTrajectory`
 
+
+# What stuff does
+- `static_tag_broadcaster.py`: static map -> `tag36h11:<id>` transforms.
+- `pose_lookup_transform.py`: computes the robot’s pose in the map frame by multiplying map->tag and tag->base_link.
+
+# LAUNCH ORDER
+*NOTE*: start the map/TF and Nav2 stack FIRST, then start the tag-detection logic. This avoids “lifecycle transition” errors (e.g. Nav2 trying to activate before map exists).
 

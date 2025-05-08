@@ -21,7 +21,7 @@
         pose_estimation_method: "pnp"   # method for estimating the tag pose
 
         # optional list of tags
-        tag:
-            ids: [31, 32]            # tag ID
-            frames: [base_link, camera]  # optional frame name
-            sizes: [0.25, 0.25]   # optional tag-specific edge size
+        # tag:
+        #     ids: [31, 32]            # tag ID
+        #     frames: [base_link, camera]  # optional frame name
+        #     sizes: [0.25, 0.25]   # optional tag-specific edge size

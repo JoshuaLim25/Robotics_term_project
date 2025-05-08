@@ -15,7 +15,7 @@ import numpy as np
 class FrameListener(Node):
 
     def __init__(self):
-        super().__init__('pose_transformer')
+        super().__init__('pose_lookup_transform')
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
@@ -88,7 +88,6 @@ def main():
     
     try:
         rclpy.spin(pose_transform_node)
-        # rclpy.spin()
     except KeyboardInterrupt:
         pass
 

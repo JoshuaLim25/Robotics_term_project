@@ -1,14 +1,21 @@
+__pycache__/*
 log/*
 build/*
 install/*
-src/robot_control/robot_control/build/*
-src/robot_control/robot_control/install/*
-src/robot_control/robot_control/log/*
+src/robot_control/build/*
+src/robot_control/install/*
+src/robot_control/log/*
+src/robot_control/resource/*
+src/robot_control/test/*
 
-src/navigation/robot_control/build/*
-src/navigation/robot_control/install/*
-src/navigation/robot_control/log/*
+src/navigation/build/*
+src/navigation/install/*
+src/navigation/log/*
+src/navigation/resource/*
+src/navigation/test/*
 
-src/robot_camera/robot_control/build/*
-src/robot_camera/robot_control/install/*
-src/robot_camera/robot_control/log/*
+src/robot_camera/build/*
+src/robot_camera/install/*
+src/robot_camera/log/*
+src/robot_camera/resource/*
+src/robot_camera/test/*

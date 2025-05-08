@@ -21,6 +21,7 @@ class FindTagActionClient(Node):
         self.get_logger().info("FindTagActionClient initialized")
 
     def tag_is_found(self, min_tag, max_tag):
+        self.get_logger().info(f"Looking for tags in range {min_tag} to {max_tag}")
         self.tag_action_client.wait_for_server()
     
         goal_msg = Tag.Goal()
@@ -28,29 +29,33 @@ class FindTagActionClient(Node):
         goal_msg.max_tag = max_tag
     
         send_goal_future = self.tag_action_client.send_goal_async(goal_msg)
+        rclpy.spin_until_future_complete(self, send_goal_future)
+        self.goal_handle = send_goal_future.result()
+
+        if not self.goal_handle or not self.goal_handle.accepted:
+            self.get_logger().info('Goal was not accepted')
+            return False
+            
+        self.result_future = self.goal_handle.get_result_async()
+        rclpy.spin_until_future_complete(self, self.result_future)
         
-        # Instead of spinning until complete, just check if it's done
-        if send_goal_future.done():
-            self.goal_handle = send_goal_future.result()
-            
-            if not self.goal_handle or not self.goal_handle.accepted:
-                self.get_logger().info("Goal was not accepted")
-                return False
-            
-            self.result_future = self.goal_handle.get_result_async()
-            
-            if self.result_future.done():
-                result = self.result_future.result().result
-                status = self.result_future.result().status
-                
-                if status == GoalStatus.STATUS_SUCCEEDED and result.tag != -1:
-                    self.tag = result.tag
-                    self.x = result.x
-                    self.y = result.y
-                    self.orientation = result.orientation
-                    return True
+        result = self.result_future.result().result
+        status = self.result_future.result().status
         
-        return False
+        if status == GoalStatus.STATUS_SUCCEEDED and result.tag != -1:
+            self.tag = result.tag
+            self.x = result.x
+            self.y = result.y
+            self.orientation = result.orientation
+            self.get_logger().info(f"Found tag {self.tag} at ({self.x}, {self.y})")
+            return True
+        else:
+            self.get_logger().info("No tags found in range")
+            self.tag = -1
+            self.x = 0.0
+            self.y = 0.0
+            self.orientation = 0.0
+            return False
 
     def get_box_pose(self):
         return self.tag, self.x, self.y, self.orientation
@@ -74,7 +79,6 @@ def main(args=None):
     navigator = BasicNavigator()
     
     # Wait for Nav2 to be ready
-    # navigator.waitUntilNav2Active()
     navigator.lifecycleStartup()
     
     # Set up navigation goal

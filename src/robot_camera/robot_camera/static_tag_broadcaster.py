@@ -1,4 +1,5 @@
 import rclpy
+import math
 from rclpy.node import Node
 from geometry_msgs.msg import TransformStamped
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
@@ -20,15 +21,22 @@ class StaticFramePublisher(Node):
             t.transform.translation.x = float(tag[1])
             t.transform.translation.y = float(tag[2])
             t.transform.translation.z = float(tag[3])
-            t.transform.rotation.w = q[3]
-            t.transform.rotation.x = q[0]
-            t.transform.rotation.y = q[1]
-            t.transform.rotation.z = q[2]
+
+            # NEW
+            norm = math.sqrt(q[0]**2 + q[1]**2 + q[2]**2 + q[3]**2)
+            t.transform.rotation.x = q[0]/norm
+            t.transform.rotation.y = q[1]/norm
+            t.transform.rotation.z = q[2]/norm
+            t.transform.rotation.w = q[3]/norm
+            # OLD STUFF
+            # t.transform.rotation.w = q[3]
+            # t.transform.rotation.x = q[0]
+            # t.transform.rotation.y = q[1]
+            # t.transform.rotation.z = q[2]
             
             t.header.frame_id = 'map'
 
 			# CHANGE
-            # t.header.child_frame_id = f"tag36h11:{tag_id}"
             t.child_frame_id = 'tag36h11:' + str(tag[0])
             # t.child_frame_id = 'tag_frame_' + str(tag[0])
             t.header.stamp = self.get_clock().now().to_msg()
@@ -63,7 +71,6 @@ def main():
     tag_frame_node.make_transform_frames(tag_list)
 
     try:
-        # rclpy.spin()
         rclpy.spin(tag_frame_node)
     except KeyboardInterrupt:
         pass

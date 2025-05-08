@@ -1,5 +1,0 @@
-[console_scripts]
-find_tag_action_server = robot_camera.find_tag_action_server:main
-pose_lookup_transform = robot_camera.pose_lookup_transform:main
-static_tag_broadcaster = robot_camera.static_tag_broadcaster:main
-

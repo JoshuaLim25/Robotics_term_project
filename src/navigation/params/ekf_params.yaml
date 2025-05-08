@@ -5,7 +5,7 @@ ekf_filter_node:
 # computation until it receives at least one message from one of the inputs. It will then run continuously at the
 # frequency specified here, regardless of whether it receives more measurements. Defaults to 30 if unspecified.
         # frequency: 10.0
-        frequency: 5.0
+        frequency: 6.0
 
 # The period, in seconds, after which we consider a sensor to have timed out. In this event, we carry out a predict
 # cycle on the EKF without correcting it. This parameter can be thought of as the minimum frequency with which the
@@ -25,7 +25,8 @@ ekf_filter_node:
 
 # Use this parameter to provide specify how long the tf listener should wait for a transform to become available. 
 # Defaults to 0.0 if unspecified.
-        transform_timeout: 0.0
+        # transform_timeout: 0.0
+        transform_timeout: 1.0
 
 # If you're having trouble, try setting this to true, and then echo the /diagnostics_agg topic to see if the node is
 # unhappy with any settings or data.
@@ -72,7 +73,7 @@ ekf_filter_node:
         map_frame: map              # Defaults to "map" if unspecified
         odom_frame: odom            # Defaults to "odom" if unspecified
         base_link_frame: base_link  # Defaults to "base_link" if unspecified
-        world_frame: map           # Defaults to the value of odom_frame if unspecified
+        world_frame: map           # NOTE: had originally
         # world_frame: odom           # Defaults to the value of odom_frame if unspecified
 
 # The filter accepts an arbitrary number of inputs from each input message type (nav_msgs/Odometry,
